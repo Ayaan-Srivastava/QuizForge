@@ -1,4 +1,4 @@
- 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,13 +52,11 @@
             margin: auto;
         }
 
-        /* NAVBAR */
-
         header {
             position: sticky;
             top: 0;
             z-index: 10;
-            background: rgba(8, 12, 24, 0.92);
+            background: rgba(8, 12, 24, 0.95);
             backdrop-filter: blur(14px);
             border-bottom: 1px solid var(--border);
         }
@@ -84,12 +82,13 @@
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 28px;
+            gap: 24px;
             color: var(--muted);
             font-size: 14px;
         }
 
-        .nav-links a:hover {
+        .nav-links a:hover,
+        .text-link:hover {
             color: white;
         }
 
@@ -122,14 +121,15 @@
             background: var(--surface-light);
         }
 
-        /* HERO */
-
         .hero {
-            padding: 82px 0 66px;
+            padding: 85px 0 70px;
             text-align: center;
             background:
-                radial-gradient(ellipse at 50% 0%,
-                rgba(77, 105, 255, 0.16), transparent 65%);
+                radial-gradient(
+                    ellipse at 50% 0%,
+                    rgba(77, 105, 255, 0.18),
+                    transparent 65%
+                );
         }
 
         .eyebrow {
@@ -157,7 +157,7 @@
 
         .hero p {
             max-width: 620px;
-            margin: 0 auto;
+            margin: auto;
             color: var(--muted);
             font-size: 16px;
         }
@@ -169,8 +169,6 @@
             gap: 12px;
             flex-wrap: wrap;
         }
-
-        /* STATS */
 
         .stats {
             display: grid;
@@ -197,10 +195,10 @@
             font-size: 13px;
         }
 
-        /* JOIN TEST */
-
-        .join-section {
-            margin-bottom: 76px;
+        .join-section,
+        .tests-section,
+        .steps-section {
+            margin-bottom: 78px;
         }
 
         .join-box {
@@ -211,9 +209,7 @@
             gap: 28px;
             border: 1px solid #30416b;
             border-radius: 18px;
-            background: linear-gradient(
-                120deg, #131f3b, #101729
-            );
+            background: linear-gradient(120deg, #131f3b, #101729);
         }
 
         .join-info h2 {
@@ -221,7 +217,8 @@
             margin-bottom: 7px;
         }
 
-        .join-info p {
+        .join-info p,
+        .section-heading p {
             color: var(--muted);
             font-size: 14px;
         }
@@ -252,12 +249,10 @@
         }
 
         .message {
-            margin-top: 10px;
+            margin-top: 12px;
             font-size: 13px;
-            color: #fca5a5;
+            overflow-wrap: anywhere;
         }
-
-        /* SECTION HEADINGS */
 
         .section-heading {
             display: flex;
@@ -273,8 +268,6 @@
         }
 
         .section-heading p {
-            color: var(--muted);
-            font-size: 14px;
             margin-top: 4px;
         }
 
@@ -282,12 +275,6 @@
             color: #9db1ff;
             font-size: 14px;
             white-space: nowrap;
-        }
-
-        /* TEST CARDS */
-
-        .tests-section {
-            margin-bottom: 80px;
         }
 
         .test-grid {
@@ -366,12 +353,6 @@
             margin-top: auto;
         }
 
-        /* HOW IT WORKS */
-
-        .steps-section {
-            margin-bottom: 80px;
-        }
-
         .steps-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -407,8 +388,6 @@
             font-size: 13px;
         }
 
-        /* FOOTER */
-
         footer {
             padding: 28px 0;
             border-top: 1px solid var(--border);
@@ -422,12 +401,11 @@
             flex-wrap: wrap;
         }
 
-        footer p, footer a {
+        footer p,
+        footer a {
             color: var(--muted);
             font-size: 12px;
         }
-
-        /* RESPONSIVE */
 
         @media (max-width: 800px) {
             .nav-links {
@@ -540,23 +518,24 @@
 </head>
 
 <body>
-
-    <!-- NAVBAR -->
     <header>
         <nav class="container">
-            <a href="#" class="logo">Quiz<span>Forge.</span></a>
+            <a href="index.html" class="logo">
+                Quiz<span>Forge.</span>
+            </a>
 
             <div class="nav-links">
                 <a href="#home">Home</a>
                 <a href="#tests">Tests</a>
                 <a href="#how-it-works" class="hide-mobile">How it works</a>
-                <a href="#" class="btn" id="loginButton">Login</a>
+
+                <!-- Login page link -->
+                <a href="login.html" class="btn">Login</a>
             </div>
         </nav>
     </header>
 
     <main>
-        <!-- HERO SECTION -->
         <section class="hero" id="home">
             <div class="container">
                 <span class="eyebrow">✦ Your learning, your progress</span>
@@ -573,15 +552,15 @@
                 </p>
 
                 <div class="hero-actions">
-                    <a href="#tests" class="btn">Explore Tests &rarr;</a>
-                    <a href="#join" class="btn btn-outline">Join with Test Code</a>
+                    <a href="#tests" class="btn">Explore Tests →</a>
+                    <a href="#join" class="btn btn-outline">
+                        Join with Test Code
+                    </a>
                 </div>
             </div>
         </section>
 
         <div class="container">
-
-            <!-- STATS: DEMO VALUES -->
             <section class="stats" aria-label="Platform overview">
                 <div class="stat-card">
                     <h2>Online</h2>
@@ -599,7 +578,6 @@
                 </div>
             </section>
 
-            <!-- JOIN TEST -->
             <section class="join-section" id="join">
                 <div class="join-box">
                     <div class="join-info">
@@ -611,19 +589,20 @@
                         <input
                             type="text"
                             id="testCode"
-                            placeholder="e.g. QUIZ2026"
+                            placeholder="e.g. PYTHON01"
                             aria-label="Enter test code"
                             maxlength="40"
                             required
                         >
-                        <button type="submit" class="btn">Join Test &rarr;</button>
+                        <button type="submit" class="btn">
+                            Join Test →
+                        </button>
                     </form>
                 </div>
 
                 <p class="message" id="joinMessage" role="status" hidden></p>
             </section>
 
-            <!-- AVAILABLE TESTS -->
             <section class="tests-section" id="tests">
                 <div class="section-heading">
                     <div>
@@ -631,11 +610,10 @@
                         <p>Choose a category and start practising.</p>
                     </div>
 
-                    <a href="#tests" class="text-link">View all &rarr;</a>
+                    <a href="#tests" class="text-link">View all →</a>
                 </div>
 
                 <div class="test-grid">
-
                     <article class="test-card">
                         <div class="test-top">
                             <div class="test-icon">💻</div>
@@ -644,8 +622,8 @@
 
                         <h3>Python Fundamentals</h3>
                         <p class="test-description">
-                            Test your knowledge of Python basics, loops,
-                            strings and data structures.
+                            Test your knowledge of Python basics,
+                            loops, strings and data structures.
                         </p>
 
                         <div class="test-meta">
@@ -654,7 +632,7 @@
                         </div>
 
                         <button class="btn start-test" data-test="python">
-                            Start Quiz &rarr;
+                            Start Quiz →
                         </button>
                     </article>
 
@@ -676,7 +654,7 @@
                         </div>
 
                         <button class="btn start-test" data-test="web">
-                            Start Quiz &rarr;
+                            Start Quiz →
                         </button>
                     </article>
 
@@ -698,14 +676,12 @@
                         </div>
 
                         <button class="btn start-test" data-test="gk">
-                            Start Quiz &rarr;
+                            Start Quiz →
                         </button>
                     </article>
-
                 </div>
             </section>
 
-            <!-- HOW IT WORKS -->
             <section class="steps-section" id="how-it-works">
                 <div class="section-heading">
                     <div>
@@ -718,57 +694,38 @@
                     <article class="step-card">
                         <div class="step-number">01</div>
                         <h3>Choose a Test</h3>
-                        <p>
-                            Select a quiz or enter the test code
-                            shared by your teacher.
-                        </p>
+                        <p>Select a quiz or enter the test code shared by your teacher.</p>
                     </article>
 
                     <article class="step-card">
                         <div class="step-number">02</div>
                         <h3>Attempt Questions</h3>
-                        <p>
-                            Answer questions, manage your time
-                            and submit your test.
-                        </p>
+                        <p>Answer questions, manage your time and submit your test.</p>
                     </article>
 
                     <article class="step-card">
                         <div class="step-number">03</div>
                         <h3>Check Your Result</h3>
-                        <p>
-                            Review your score and understand
-                            which topics need more practice.
-                        </p>
+                        <p>Review your score and find topics that need more practice.</p>
                     </article>
                 </div>
             </section>
         </div>
     </main>
 
-    <!-- FOOTER -->
     <footer>
         <div class="container footer-inner">
-            <a href="#" class="logo">Quiz<span>Forge.</span></a>
-
+            <a href="index.html" class="logo">Quiz<span>Forge.</span></a>
             <p>© <span id="year"></span> QuizForge. Built for better learning.</p>
-
             <a href="#home">Back to top ↑</a>
         </div>
     </footer>
 
     <script>
-        // Update the footer year automatically.
         document.getElementById("year").textContent =
             new Date().getFullYear();
 
-        // Demo navigation until the login system is connected.
-        document.getElementById("loginButton").addEventListener("click", function (event) {
-            event.preventDefault();
-            alert("Login system will be added in the next development phase.");
-        });
-
-        // Demo test codes. Replace with a database lookup later.
+        // Demo test codes
         const demoTestCodes = {
             "PYTHON01": "python",
             "WEB2026": "web",
@@ -776,21 +733,20 @@
         };
 
         function openTest(testId) {
-            // Quiz pages will be connected in a later step.
             alert(
                 "You selected the " + testId +
-                " quiz. The actual question page will be added next."
+                " quiz. The actual quiz page has not been connected yet."
             );
         }
 
-        // Start quiz buttons.
+        // Demo quiz buttons
         document.querySelectorAll(".start-test").forEach(function (button) {
             button.addEventListener("click", function () {
                 openTest(button.dataset.test);
             });
         });
 
-        // Test code form.
+        // Join using a demo test code
         document.getElementById("joinForm").addEventListener("submit", function (event) {
             event.preventDefault();
 
@@ -804,16 +760,14 @@
 
             if (testId) {
                 message.style.color = "#4ade80";
-                message.textContent =
-                    "Demo code accepted! Opening the selected quiz...";
+                message.textContent = "Demo code accepted!";
                 openTest(testId);
             } else {
                 message.style.color = "#fca5a5";
                 message.textContent =
-                    "Test code not found in the demo. Please check the code.";
+                    "Test code not found. Please check the code.";
             }
         });
     </script>
-
 </body>
 </html>
